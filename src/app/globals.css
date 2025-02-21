@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +18,62 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+:root {
+  --headerbackground: #a7f3d0;
+  --forground: "#ffff";
+}
+
+.header-outer {
+  /* margin: 9px 19px 20px; */
+}
+.header-inner {
+  cursor: pointer;
+  display: flex;
+  gap: 186px;
+  background: #059669;
+  height: 40px;
+  padding-left: 19px;
+  padding-top: 6px;
+  font-size: larger;
+  font-weight: 500;
+  padding: 18px 50px 0px;
+  padding-bottom: 49px;
+  color: #ecfdf5;
+}
+
+.domine-font {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.open-sans {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.inter-font {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.first-text {
+  cursor: pointer;
+  -webkit-transition: width 9s, -webkit-transform 2s;
+  -webkit-transform: rotate(360deg);
+}
+
+.first-text:hover {
+  -webkit-transform: rotate(380deg);
+}
+.second-section {
+  font-weight: 500;
 }

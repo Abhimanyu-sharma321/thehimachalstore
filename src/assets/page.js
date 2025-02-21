@@ -1,0 +1,7 @@
+export { default as firstImage } from "../assets/home/image1.png"
+export { default as secondImage } from "../assets/home/ image2.png"
+export { default as thirdImage } from "../assets/home/image3.png"
+export { default as fourthImage } from "../assets/home/image4.png"
+export { default as fifthImage } from "../assets/home/image5.png"
+export { default as sixthImage } from "../assets/home/image6.png"
+export { default as seventhImage } from "../assets/home/ image7.png"

@@ -1,6 +1,19 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/common/Header/page";
+`
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+</style>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@575&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@575&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+</style>
+</style>
+`
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,8 +33,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-[#ECFDF5]`}
       >
+        <Header />
         {children}
       </body>
     </html>
