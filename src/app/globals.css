@@ -32,7 +32,7 @@ body {
   cursor: pointer;
   display: flex;
   gap: 186px;
-  background: #059669;
+  background: #65a30d;
   height: 40px;
   padding-left: 19px;
   padding-top: 6px;
@@ -76,4 +76,39 @@ body {
 }
 .second-section {
   font-weight: 500;
+}
+
+.join-our-div {
+  width: 1030px;
+  height: 399px;
+  border-radius: 39px;
+  margin-left: 241px;
+  margin-top: 10px;
+  padding: 70px;
+  padding-left: 269px;
+}
+.footer-div {
+  display: flex;
+  gap: 30px;
+  margin-left: 560px;
+  margin-top: 43px;
+}
+.footer-second-div {
+  border: black;
+}
+
+.subscribe {
+  position: "relative";
+  top: 500;
+  background-color: "#65A30D";
+  transition-property: "all";
+  transition-duration: "2000ms";
+  height: 61px;
+  color: #d1fae5;
+  border-radius: 9px;
+}
+.subscribe:hover {
+  background-color: #ecfdf5;
+  border-color: #059669;
+  color: #064e3b;
 }
