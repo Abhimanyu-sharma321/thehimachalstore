@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/common/Header/page";
-import { Footer } from "@/common/Footer/page";
 `
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
