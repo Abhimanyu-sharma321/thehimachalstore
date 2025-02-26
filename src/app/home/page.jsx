@@ -1,7 +1,5 @@
 "use client"
-
-import HomeScreen from "@/component/home/Home"
-
+import HomeScreen from "@/components/home/Home"
 const Home = () => {
     return (
         <>

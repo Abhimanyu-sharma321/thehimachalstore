@@ -1,13 +1,10 @@
 import { fifthImage, firstImage, fourthImage, secondImage, seventhImage, sixthImage, thirdImage } from "@/assets/page";
 import { _H2CLASS, _INPUT_CLASS, _LABEL_P_CLASS, _PCLASS, INPUT_P_CLASS } from "@/common/commonStyles/CommonStyle";
-import { FeedBackForm } from "@/component/home/Home";
 import Image from "next/image";
 import { useContext } from "react";
-import { registerContext } from "../register/RegisterContext";
+
 export default function HomeScreen() {
 
-    const data = useContext(registerContext)
-    console.log(data, "data")
     const _HEADING_AND_PARAGRAPH = [
         {
             id: 1,
@@ -99,7 +96,7 @@ export default function HomeScreen() {
                     <div className="container w-[50%] h-auto pr-[60px] grid grid-cols-2 cursor-pointer pt-10 overflow-hidden ">
                         {
                             _IMAGES.map((image) => (
-                                <div>
+                                <div key={image.id}>
                                     <Image src={image?.image} alt={image?.alt} className={`${image?.imageClass} overflow-hidden  `} />
                                 </div>
                             ))
