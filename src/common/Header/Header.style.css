@@ -1,0 +1,25 @@
+:root {
+  --header-background: black;
+  --header-text: black;
+  --header-hover-text: black;
+}
+.header-text:hover {
+  color: var(--header-hover-text);
+  text-decoration: underline;
+}
+
+.header-inner {
+  color: var(--header-text);
+  background: var(--header-background);
+  cursor: pointer;
+  display: flex;
+  gap: 186px;
+  height: 40px;
+  padding-left: 19px;
+  padding-top: 6px;
+  font-size: larger;
+  font-weight: 500;
+  padding: 18px 50px 0px;
+  padding-bottom: 49px;
+  color: #ecfdf5;
+}
