@@ -1,0 +1,57 @@
+.root {
+  --button-text: black;
+  --hoverbutton: white;
+  --buttonbackground: black;
+  --hoverbutton-text: black;
+  --button-border: black;
+}
+
+.shop-fresh {
+  border-color: var(--button-border);
+  transition: all 0.3s ease-in-out;
+  background: var(--buttonbackground);
+  color: var(--button-text);
+}
+
+.shop-fresh:hover {
+  background: var(--hoverbutton);
+  color: var(--hoverbutton-text);
+  border-color: var(--button-border);
+}
+
+.first-text {
+  cursor: pointer;
+  -webkit-transition: width 9s, -webkit-transform 2s;
+  -webkit-transform: rotate(360deg);
+}
+.first-text:hover {
+  -webkit-transform: rotate(380deg);
+}
+.second-section {
+  font-weight: 500;
+}
+
+.join-our-div {
+  width: 1030px;
+  height: 399px;
+  border-radius: 39px;
+  margin-left: 241px;
+  margin-top: 10px;
+  padding: 70px;
+  padding-left: 269px;
+}
+.subscribe {
+  position: "relative";
+  top: 500;
+  background-color: "#65A30D";
+  transition-property: "all";
+  transition-duration: "2000ms";
+  height: 61px;
+  color: #d1fae5;
+  border-radius: 9px;
+}
+.subscribe:hover {
+  background-color: #ecfdf5;
+  border-color: #059669;
+  color: #064e3b;
+}

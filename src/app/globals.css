@@ -1,47 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@575&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@575&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-:root {
-  --headerbackground: #a7f3d0;
-  --forground: "#ffff";
-}
-
-.header-outer {
-  /* margin: 9px 19px 20px; */
-}
-.header-inner {
-  cursor: pointer;
-  display: flex;
-  gap: 186px;
-  background: #65a30d;
-  height: 40px;
-  padding-left: 19px;
-  padding-top: 6px;
-  font-size: larger;
-  font-weight: 500;
-  padding: 18px 50px 0px;
-  padding-bottom: 49px;
-  color: #ecfdf5;
-}
 
 .domine-font {
   font-family: "Domine", serif;
@@ -64,51 +29,5 @@ body {
   font-weight: 1000;
   font-style: normal;
 }
-
-.first-text {
-  cursor: pointer;
-  -webkit-transition: width 9s, -webkit-transform 2s;
-  -webkit-transform: rotate(360deg);
-}
-
-.first-text:hover {
-  -webkit-transform: rotate(380deg);
-}
-.second-section {
-  font-weight: 500;
-}
-
-.join-our-div {
-  width: 1030px;
-  height: 399px;
-  border-radius: 39px;
-  margin-left: 241px;
-  margin-top: 10px;
-  padding: 70px;
-  padding-left: 269px;
-}
-.footer-div {
-  display: flex;
-  gap: 30px;
-  margin-left: 560px;
-  margin-top: 43px;
-}
-.footer-second-div {
-  border: black;
-}
-
-.subscribe {
-  position: "relative";
-  top: 500;
-  background-color: "#65A30D";
-  transition-property: "all";
-  transition-duration: "2000ms";
-  height: 61px;
-  color: #d1fae5;
-  border-radius: 9px;
-}
-.subscribe:hover {
-  background-color: #ecfdf5;
-  border-color: #059669;
-  color: #064e3b;
+.open-sans {
 }
