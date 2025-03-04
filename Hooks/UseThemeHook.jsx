@@ -1,4 +1,5 @@
 "use client "
+import axios from "axios"
 import moment from "moment"
 import { useEffect, useState } from "react"
 
@@ -10,6 +11,23 @@ const UseThemeHook = () => {
     const [eveningTime, seteveningTime] = useState("17:00:00")
     const [nightTime, setnightTime] = useState("20:00:00")
     const [currentTheme, setCurrentTheme] = useState()
+    const [weatherInformation, setWeatherInformation] = useState()
+
+    useEffect(() => {
+        getWeatherInformation()
+    }, [])
+
+    const getWeatherInformation = async () => {
+        try {
+            let response = await axios.get("https://api.weatherapi.com/v1/current.json?q=kangra%20&lang=hindi&key=da25d190f1d14c9490271939252802")
+            setWeatherInformation(response.data?.current?.condition.text)
+            console.log(response, "response", weatherInformation, "weatherInformation")
+        } catch (error) {
+            console.log(error, "errors")
+        }
+    }
+
+    console.log(weatherInformation, "weatherInformation")
     const [morningTheme, setMorningTheme] = useState({
         name: "morning",
         textColor: "#2D2A26",
@@ -25,7 +43,6 @@ const UseThemeHook = () => {
         links: "#E67E22",
         linkHover: "#D35400",
     });
-
     const [afternoonTheme, setAfternoonTheme] = useState({
         name: "afternoon",
         textColor: "#2A2A2A",
@@ -41,7 +58,6 @@ const UseThemeHook = () => {
         links: "#C75C00",
         linkHover: "#8C3E00",
     });
-
     const [eveningTheme, setEveningTheme] = useState({
         name: "evening",
         textColor: "#F3E5F5",
@@ -57,7 +73,6 @@ const UseThemeHook = () => {
         links: "#E07A5F",
         linkHover: "#C45D44",
     });
-
     const [nightTheme, setNightTheme] = useState({
         name: "night",
         textColor: "#E0E0E0",
@@ -73,6 +88,54 @@ const UseThemeHook = () => {
         links: "#3B82F6",
         linkHover: "#2563EB",
     });
+    const [stormyTheme, setStormyTheme] = useState({
+        name: "stormy",
+        textColor: "#D1D5DB",  // Light grey for readability
+        background: "#0F172A",  // Deep dark blue like thunderclouds
+        buttonBackground: "#37474F",  // Dark grey like wet roads
+        buttonText: "#E0E0E0",  // Soft white for contrast
+        buttonBorder: "#455A64",  // Muted blue-grey for depth
+        buttonHoverBackground: "#263238",  // Darker grey for hover
+        buttonHoverText: "#FFFFFF",  // Pure white for contrast
+        header: "#1E293B",  // Dark blue-grey like heavy rain clouds
+        heading: "#CBD5E1",  // Soft white-grey like distant clouds
+        contentText: "#A1A1A1",  // Muted grey for readability
+        links: "#60A5FA",  // Cool blue like rain reflections
+        linkHover: "#3B82F6",  // Vibrant blue for hover effect
+    });
+
+
+    const [mistyTheme, setMistyTheme] = useState({
+        name: "misty",
+        textColor: "#4B5563",  // Soft grey for a gentle contrast
+        background: "#CBD5E1",  // Light blue-grey like misty clouds
+        buttonBackground: "#94A3B8",  // Subtle desaturated blue
+        buttonText: "#1E293B",  // Dark blue-grey for contrast
+        buttonBorder: "#64748B",  // Cool grey-blue for edges
+        buttonHoverBackground: "#7B8EA1",  // Slightly darker hover effect
+        buttonHoverText: "#FFFFFF",  // White for a clean look
+        header: "#94A3B8",  // Desaturated blue-grey
+        heading: "#1E293B",  // Dark blue-grey like deep mist
+        contentText: "#475569",  // Balanced soft grey text
+        links: "#3B82F6",  // Fresh blue for links
+        linkHover: "#2563EB",  // More vibrant blue on hover
+    });
+    const [heavyRainTheme, setHeavyRainTheme] = useState({
+        name: "heavyRain",
+        textColor: "#D6E4F0",  // Light blue-grey for readability
+        background: "#1C2833",  // Dark grey-blue like a rainy night
+        buttonBackground: "#2C3E50",  // Dark steel blue
+        buttonText: "#D6E4F0",  // Soft white-blue for contrast
+        buttonBorder: "#34495E",  // Slightly lighter grey-blue
+        buttonHoverBackground: "#17202A",  // Darker grey for depth
+        buttonHoverText: "#FFFFFF",  // White for contrast
+        header: "#212F3C",  // Deep grey-blue like heavy clouds
+        heading: "#A9CCE3",  // Lighter misty blue
+        contentText: "#B0BEC5",  // Muted grey for readability
+        links: "#76B6EC",  // Soft blue like water reflections
+        linkHover: "#5FA8D3",  // Brighter blue for hover
+    });
+
 
     useEffect(() => {
         let currenttime = moment()
@@ -80,23 +143,30 @@ const UseThemeHook = () => {
         let theme = getTheme(formattedtime)
         console.log(currenttime, "currenttime", currenttime.format("HH:mm:ss"), theme)
     }, [time])
-
     console.log(currentTheme, "currentTheme")
-
     const getTheme = (time) => {
-        if (time >= morningTime && time < afternoonTime) {
-            setCurrentTheme(morningTheme)
+        console.log(weatherInformation)
+        if (weatherInformation) {
+            setCurrentTheme(heavyRainTheme)
+            console.log("weatherconditionexecuted");
         }
         else {
-            if (time >= afternoonTime && time < eveningTime) {
-                setCurrentTheme(afternoonTheme)
+            console.log("elsestart");
+            if (time >= morningTime && time < afternoonTime) {
+                setCurrentTheme(morningTheme)
             }
-            else if (time >= eveningTime && time < nightTime) {
-                setCurrentTheme(eveningTheme)
+            else {
+                if (time >= afternoonTime && time < eveningTime) {
+                    setCurrentTheme(afternoonTheme)
+                }
+                else if (time >= eveningTime && time < nightTime) {
+                    setCurrentTheme(stormyTheme)
+                }
+                else if (time >= nightTime && time > morningTime) {
+                    setCurrentTheme(nightTheme)
+                }
             }
-            else if (time >= nightTime && time > morningTime) {
-                setCurrentTheme(nightTheme)
-            }
+            console.log("elseend");
         }
     }
     return {

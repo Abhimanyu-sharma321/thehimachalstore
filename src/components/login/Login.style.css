@@ -1,0 +1,22 @@
+section {
+  
+    background: conic-gradient(#181f18, #171b1d );
+    background-attachment: fixed;
+    base-palette: calc(30deg);
+    background-image: -webkit-repeating-radial-gradient(#0000);
+  }
+  input[type="text"] {
+    width: 77%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type="text"]:focus {
+    border: 2px solid rgb(84, 126, 204);
+    box-shadow: 4px;
+  }

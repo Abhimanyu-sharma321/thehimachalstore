@@ -1,0 +1,53 @@
+.register-section {
+  transform: perspective(500px) translate3d(0px, 0px, -250px) rotateX(27deg)
+    scale(0.9, 0.9);
+  border-radius: 20px;
+  border: 5px solid #e6e6e6;
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in-out transform;
+}
+.register-section:hover {
+  transform: translate3d(0px, 0px, -250px);
+}
+.image-div {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-image: -moz-radial-gradient(30px);
+  background-size: cover;
+}
+/* 
+.register-section {
+  transform: scale(0.5) translate(-100%, -100%);
+}
+   */
+/* input {
+  border:1px solid black;
+  transition: all;
+}
+input:focus {
+  border: 2px solid skyblue;
+} */
+
+input[type="text"] {
+  width: 77%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid rgb(84, 126, 204);
+  box-shadow: 4px;
+}
+
+section {
+  
+  background: conic-gradient(#802497, #0b5679 );
+  background-attachment: fixed;
+  base-palette: calc(30deg);
+  background-image: -webkit-repeating-radial-gradient(#0000);
+}
